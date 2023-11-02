@@ -6,3 +6,13 @@ npm init -y
 npm install express @line/bot-sdk axios dotenv
 
 create app
+
+Then you're done first thing you should do is
+add .gitignore and write .env to it
+and then use this command
+
+git rm -r cache .env
+
+and then add commit push but it's not done your secret is gone but you can find them in history commit, So what should we do
+
+run this command -> git filter-branch --index-filter "git rm -rf --cache --ignore-unmatch .env" HEAD
