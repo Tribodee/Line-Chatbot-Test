@@ -1,0 +1,6 @@
+Doc bot-line
+
+module & package usage
+
+npm init -y
+npm install express @line/bot-sdk axios dotenv
