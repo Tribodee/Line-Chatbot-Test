@@ -22,7 +22,8 @@ app.post('/webhook', line.middleware(lineConfig), async (req, res) =>{
     }
 });
 const handleEvent = async (event) => {
-    if (event.type === 'message' && event.message.text == 'ดูบอล'){
+    if (event.type === 'message' && event.message.text == 'test'){
+        const UserText = event.message.text
         try {
             const {data} = await axios.get(`https://${env.RAPID_URL}`,{
                 headers: {
@@ -38,7 +39,7 @@ const handleEvent = async (event) => {
         }
     }
     else if(event.type !== 'message' || event.message.type !== 'text'){
-        return client.replyMessage(event.replyToken,{type:'text',text:'error'})
+        return client.replyMessage(event.replyToken,{type:'text',text:'where\'s test'})
     }
 }
 const PORT = process.env.PORT || 3000;
