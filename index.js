@@ -4,12 +4,10 @@ const axios = require('axios').default
 const dotenv = require('dotenv')
 const env = dotenv.config().parsed
 const app = express()
-
 const lineConfig = {
     channelAccessToken: env.ACCESS_TOKEN,
     channelSecret: env.SECRET_TOKEN
 }
-
 const client = new line.Client(lineConfig);
 app.post('/webhook', line.middleware(lineConfig), async (req, res) =>{
     try{
@@ -43,7 +41,6 @@ const handleEvent = async (event) => {
         return client.replyMessage(event.replyToken,{type:'text',text:'error'})
     }
 }
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(PORT)
