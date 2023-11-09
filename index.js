@@ -53,8 +53,8 @@ const handleEvent = async (event) => {
             return client.replyMessage(event.replyToken, { type: 'text', text: 'Something wrong on API' });
         }
     }
-    else if(event.type !== 'message' || event.message.type !== 'text'){
-        return client.replyMessage(event.replyToken,{type:'text',text:'error'})
+    else if(event.type !== 'message' || event.message.type !== 'Game Free'){
+        return client.replyMessage(event.replyToken,{type:'text',text:'Please type `Game Free` to interactive'})
     }
 }
 // const PORT = process.env.PORT || 3000;
